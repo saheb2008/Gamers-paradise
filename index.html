@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gamers' Paradise.in</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style type="text/css">
+.slide{
+width:300px;
+height:500px;
+background-color:#93F;
+position:absolute;
+cursor:pointer;
+margin:0;
+padding:0;
+transition:0.3s ease;
+display:block;
+transform:translateX(-310px);	
+}
+.slide h1{
+font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+color:#FFF;
+text-align:center;	
+font-size:36px;
+}
+.slide ul{
+list-style-type:none;	
+}
+.slide ul li{
+font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size:18px;
+padding:5px;
+color:#FFF;	
+}
+.slide ul li a{
+text-decoration:none;
+color:#FFF;	
+}
+.slide ul li a:hover{
+color:#FFF;
+background-color:#999;
+padding-left:30px;
+padding-right:30px;
+padding-top:0px;	
+}
+input{
+display:none;
+visibility:hidden;	
+}
+.toggle{
+width:50px;
+height:50px;
+background-color:#F00;
+transition:0.3s ease;
+padding:10px 1px 0px 0px;
+margin:0;
+cursor:pointer;
+z-index:1;
+position:absolute;
+}
+input:checked ~ .toggle{
+transform:translateX(0px);	
+}
+input:checked ~ .slide{
+transform:translateX(0px);	
+}
+.toggle:hover{
+color:#000;
+}
+.btn{
+width:70px;
+height:30px;
+cursor:pointer;
+transition:all 0.3s;
+position:relative;
+background-color:#C0C;
+font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+color:#FFF;
+font-size:9px;
+border:1px solid red;
+border-radius:8px;	
+}
+.btn::before
+.btn::after{
+content:"";
+position:absolute;	
+}
+.btn:hover{
+box-shadow:0 0 5px #CC00CC, 0 0 25px #CC00CC, 0 0 50px #CC00CC;
+background-color:#C0C;
+color:#FFF;	
+}
+.btn a{
+color:#FFF;
+text-decoration:none;	
+}
+.main{
+width:100%;
+height:1000px;
+margin:0;
+padding:0;
+background-color:black;
+}
+.main .head{
+width:100%;
+height:50px;
+background-color:red;
+margin:0;
+padding:10px 0;
+font-family:"old English Text MT";
+color:white;
+font-size:36px;
+text-align:center;
+}
+.main .menu{
+width:100%;
+height:100px;
+margin:0;
+padding:0;
+background-color:red;
+}
+.main .menu .left{
+width:20%;
+margin:0;
+padding:0 0px 0px 10px;
+height:100px;
+float:left;
+}
+.main .menu .right{
+width:80%;
+height:100px;
+margin:0;
+padding:20px 0 0 0;
+}
+.main .menu .right ul{
+list-style-type:none;
+}
+.main .menu .right ul li{
+font-family:"old English Text MT";
+font-size:24px;
+color:white;
+padding:10px 10px;
+float:right;
+}
+.main .menu .right ul li a{
+text-decoration:none;
+color:white;
+}
+.main .menu .right ul li a:hover {
+color:black;
+}
+.main .banner{
+width:100%;
+height:200px;
+margin:0;
+padding:0;
+background-color:white;
+}
+.main .bodypart1{
+width:100%;
+height:50px;
+margin:0;
+padding:0;
+}
+.main .bodypart1 h1{
+font-family:Tahoma,Arial,sans-serif;
+font-size:37px;
+color:white;
+text-align:center;
+}
+.main .bodypart2{
+width:100%;
+height:50px;
+margin:0;
+padding:0;
+}
+.main .bodypart2 p{
+font-family:Tahoma,Arial,sans-serif;
+font-size:24px;
+color:white;
+text-align:center;
+}
+.main .bodypart3{
+width:100%;
+height:200px;
+margin:0;
+padding:0;
+}
+.main .bodypart3 ul{
+list-style-type:none;
+}
+.main .bodypart3 ul li{
+padding:0px 70px;
+float:left;
+}
+.main .bodypart4{
+width:100%;
+height:50px;
+margin:0;
+padding:0;
+}
+.main .bodypart4 ul{
+list-style-type:none;
+}
+.main .bodypart4 ul li{
+font-family:Verdana,Arial,sans-serif;
+font-size:18px;
+padding:0 19px;
+color:white;
+float:left;
+text-align:center;
+width:20%;
+}
+.main .bodypart5{
+width:100%;
+height:100px;
+margin:0;
+padding:0;	
+}
+.main .bodypart5 ul{
+list-style-type:none;
+}
+.main .bodypart5 ul li{
+font-family:"Times New Roman", Times, serif;
+font-size:18px;
+color:#FFF;
+float:left;
+text-align:justify;
+width:20%;
+height:100%;
+padding:0 20px;	
+}
+.main .bodypart6{
+width:100%;
+height:50px;
+margin:0;
+padding:0;	
+}
+.main .bodypart6 ul{
+list-style-type:none;	
+}
+.main .bodypart6 ul li{
+width:20%;
+padding:0 18px;
+float:left;
+line-height:45px;
+text-align:center;
+}
+.main .footer{
+width:100%;
+height:200px;
+background-color:#666;
+margin:0;
+padding:0;	
+}
+.main .footer ul{
+list-style-type:none;	
+}
+.main .footer ul li{
+font-family:"Times New Roman", Times, serif;
+font-size:16px;
+color:#FFF;
+float:left;
+width:20%;
+padding:10px 0;	
+}
+.main .footer ul li a{
+color:#FFF;	
+}
+.main .footer p{
+font-family:"Times New Roman", Times, serif;
+font-size:24px;;
+color:#FFF;
+text-align:center;	
+}
+.main .footer h5{
+font-family:"Times New Roman", Times, serif;
+font-size:14px;
+color:#FFF;
+text-align:center;	
+}
+.main .footer h5 a{
+text-decoration:none;
+color:#900;	
+}
+.main .footer h5 a:hover{
+color:#000;	
+}
+</style>
+</head>
+<body>
+<div class="main">
+<div class="head" >
+<label>
+<input type="checkbox" />
+<div class="toggle"><i class="fa-solid fa-compass"></i></div>
+<div class="slide">
+<h1><u>Explore Us</u></h1>
+<ul>
+<li><a href="#"><i class="fa-solid fa-fire"></i> Trending</a></li>
+<li><a href="#"><i class="fa-solid fa-newspaper"></i> News</a></li>
+<li><a href="#"><i class="fa-solid fa-gamepad"></i> Genres</a></li>
+<li><a href="#"><i class="fa-solid fa-download"></i> Download Games </a></li>
+</ul>
+</div>
+</label>
+<b>Gamers' Paradise</b>
+</div>
+<div class="menu" >
+<div class="left" >
+<img src="logo.jpg" width="50%" height="70px" >
+</div>
+<div class="right" >
+<ul>
+<li><a href="#" target="_blank" >Help</a></li>
+<li><a href="#" target="_blank">Contact</a></li>
+<li><a href="#" target="_blank">About</a></li>
+<li><a href="#" target="_blank">Home</a></li>
+</ul>
+</div>
+</div>
+<div class="banner" >
+<img src="banner.jpg" width="100%" height="200px" >
+</div>
+<div class="bodypart1" ><h1>Dive Into The Realm Of Games</h1></div>
+<div class="bodypart2" ><p><b><u>Popular Games From Last Few Years</u></b></p></div>
+<div class="bodypart3" >
+<ul>
+<li><img src="call of duty.jpg" width="100%" height="200px" ></li>
+<li><img src="gta 5.jpg" width="100%" height="200px" ></li>
+<li><img src="free fire.jpg" width="100%" height="200px" ></li>
+<li><img src="cyberpunk.jpg" width="100%" height="200px" ></li>
+</ul>
+</div>
+<div class="bodypart4" >
+<ul>
+<li><b>COD WWII</b></li>
+<li><b>GTA V</b></li>
+<li><b>FREE FIRE</b></li>
+<li><b>CYBERPUNK 2077</b></li>
+</ul>
+</div>
+<div class="bodypart5">
+<ul>
+<li>"Call of Duty: WWII" is a 1st person shooting game set in the scenario of WWII</li>
+<li>"Grand Theft Auto V" is an open-world action-adventure game related to mafias & violence </li>
+<li>"Free Fire" is an action-packed battleground fps  mobile game.</li>
+<li>"Cyberpunk 2077" is an open-world futuristic  games that comes with stunning graphics.</li>
+</ul>
+</div>
+<div class="bodypart6">
+<ul>
+<li><button class="btn"><a href="#">Know More</a></button></li>
+<li><button class="btn"><a href="#">Know More</a></button></li>
+<li><button class="btn"><a href="#">Know More</a></button></li>
+<li><button class="btn"><a href="#">Know More</a></button></li>
+</ul>
+</div>
+<div class="footer">
+<ul>
+<li><a href="#">privacy policy</a></li>
+<li><a href="#">terms & conditions</a></li>
+<li><a href="#">contact</a></li>
+<li><a href="#">about</a></li>
+</ul><br /><br />
+<h5>follow us on social media:<br />
+<a href="#"><i class="fa-brands fa-youtube"></i></a>  &nbsp;&nbsp;
+<a href="#"><i class="fa-brands fa-instagram"></i></a> &nbsp;&nbsp;
+<a href="#"><i class="fa-brands fa-facebook"></i></a></h5>
+<p>gamersparadise.in@2024 all rights reserved.</p>
+</div>
+</div>
+</body>
+</html>
